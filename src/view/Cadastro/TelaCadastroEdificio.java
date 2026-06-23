@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package view.Cadastro;
+package view;
 
-import view.Template.TemplateCadastro2026;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -19,6 +21,44 @@ public class TelaCadastroEdificio extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+
+    public JButton getjButtonBuscar() {
+        return jButtonBuscar;
+    }
+
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public JButton getjButtonGravar() {
+        return jButtonGravar;
+    }
+
+    public JButton getjButtonNovo() {
+        return jButtonNovo;
+    }
+
+    public JButton getjButtonSair() {
+        return jButtonSair;
+    }
+
+    public JPanel getjPanelbotoes() {
+        return jPanelbotoes;
+    }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public JPanel getjPanelDados() {
+        return jPanelDados;
+    }
+    
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -180,9 +220,8 @@ public class TelaCadastroEdificio extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextFieldId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                            .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,9 +241,11 @@ public class TelaCadastroEdificio extends javax.swing.JDialog {
                             .addComponent(jTextField1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jFormattedTextField2))
+                            .addGroup(jPanelDadosLayout.createSequentialGroup()
+                                .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jFormattedTextField2))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelDadosLayout.createSequentialGroup()
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,7 +254,7 @@ public class TelaCadastroEdificio extends javax.swing.JDialog {
                                 .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(0, 87, Short.MAX_VALUE))
                                     .addComponent(jTextField9)))))
                     .addGroup(jPanelDadosLayout.createSequentialGroup()
                         .addGroup(jPanelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,31 +380,34 @@ public class TelaCadastroEdificio extends javax.swing.JDialog {
 
         jButtonNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Create.png"))); // NOI18N
         jButtonNovo.setText("Novo");
+        jButtonNovo.setActionCommand("0");
         jButtonNovo.setMinimumSize(new java.awt.Dimension(85, 23));
         jButtonNovo.setPreferredSize(new java.awt.Dimension(100, 23));
         jPanelbotoes.add(jButtonNovo);
 
         jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cancel.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
-        jButtonCancelar.setEnabled(false);
+        jButtonCancelar.setActionCommand("1");
         jButtonCancelar.setMinimumSize(new java.awt.Dimension(85, 23));
         jButtonCancelar.setPreferredSize(new java.awt.Dimension(100, 23));
         jPanelbotoes.add(jButtonCancelar);
 
         jButtonGravar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/OK.png"))); // NOI18N
         jButtonGravar.setText("Gravar");
-        jButtonGravar.setEnabled(false);
+        jButtonGravar.setActionCommand("1");
         jButtonGravar.setMinimumSize(new java.awt.Dimension(85, 23));
         jButtonGravar.setPreferredSize(new java.awt.Dimension(100, 23));
         jPanelbotoes.add(jButtonGravar);
 
         jButtonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Find.png"))); // NOI18N
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.setActionCommand("0");
         jButtonBuscar.setPreferredSize(new java.awt.Dimension(100, 23));
         jPanelbotoes.add(jButtonBuscar);
 
         jButtonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Exit.png"))); // NOI18N
         jButtonSair.setText("Sair");
+        jButtonSair.setActionCommand("0");
         jButtonSair.setMaximumSize(new java.awt.Dimension(80, 23));
         jButtonSair.setMinimumSize(new java.awt.Dimension(85, 23));
         jButtonSair.setPreferredSize(new java.awt.Dimension(100, 23));
