@@ -17,7 +17,18 @@ public class TelaCadastroProprietario extends javax.swing.JDialog {
     public TelaCadastroProprietario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jButtonNovo.setActionCommand("0");
+        jButtonBuscar.setActionCommand("0");
+        jButtonSair.setActionCommand("0");
     }
+
+    public javax.swing.JButton getjButtonNovo() { return jButtonNovo; }
+    public javax.swing.JButton getjButtonCancelar() { return jButtonCancelar; }
+    public javax.swing.JButton getjButtonGravar() { return jButtonGravar; }
+    public javax.swing.JButton getjButtonBuscar() { return jButtonBuscar; }
+    public javax.swing.JButton getjButtonSair() { return jButtonSair; }
+    public javax.swing.JPanel getjPanelbotoes() { return jPanelbotoes; }
+    public javax.swing.JPanel getjPanelDados() { return jPanelDados; }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

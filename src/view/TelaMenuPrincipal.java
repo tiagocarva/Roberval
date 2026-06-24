@@ -5,7 +5,25 @@
 package view;
 
 import view.Cadastro.TelaCadastroEdificio;
+import view.Cadastro.TelaCadastroAreaCompartilhada;
+import view.Cadastro.TelaCadastroAreaCompartilhadaEdificio;
+import view.Cadastro.TelaCadastroCustoNivel1;
+import view.Cadastro.TelaCadastroCustoNivel2;
+import view.Cadastro.TelaCadastroFornecedor;
+import view.Cadastro.TelaCadastroProprietario;
+import view.Cadastro.TelaCadastroSindicoProfissional;
+import view.Cadastro.TelaCadastroUnidade;
+import view.Cadastro.TelaCadastroUnidadeCondomino;
 import controller.ControllerCadastroEdificio;
+import controller.ControllerCadastroAreaCompartilhada;
+import controller.ControllerCadastroAreaCompartilhadaEdificio;
+import controller.ControllerCadastroCustoNivel1;
+import controller.ControllerCadastroCustoNivel2;
+import controller.ControllerCadastroFornecedor;
+import controller.ControllerCadastroProprietario;
+import controller.ControllerCadastroSindicoProfissional;
+import controller.ControllerCadastroUnidade;
+import controller.ControllerCadastroUnidadeCondominio;
 
 /**
  *
@@ -18,6 +36,57 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
      */
     public TelaMenuPrincipal() {
         initComponents();
+
+        jMenuItem3.addActionListener(evt -> abrirCadastroUnidade());
+        jMenuItem12.addActionListener(evt -> abrirCadastroUnidadeCondominio());
+        jMenuItem9.addActionListener(evt -> abrirCadastroAreaCompartilhadaEdificio());
+        jMenuItem4.addActionListener(evt -> abrirCadastroProprietario());
+        jMenuItem5.addActionListener(evt -> abrirCadastroFornecedor());
+        jMenuItem6.addActionListener(evt -> abrirCadastroSindicoProfissional());
+        jMenuItem10.addActionListener(evt -> abrirCadastroCustoNivel1());
+        jMenuItem7.addActionListener(evt -> System.exit(0));
+    }
+
+    private void abrirCadastroUnidade() {
+        TelaCadastroUnidade tela = new TelaCadastroUnidade(null, true);
+        new ControllerCadastroUnidade(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroUnidadeCondominio() {
+        TelaCadastroUnidadeCondomino tela = new TelaCadastroUnidadeCondomino(null, true);
+        new ControllerCadastroUnidadeCondominio(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroAreaCompartilhadaEdificio() {
+        TelaCadastroAreaCompartilhadaEdificio tela = new TelaCadastroAreaCompartilhadaEdificio(null, true);
+        new ControllerCadastroAreaCompartilhadaEdificio(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroProprietario() {
+        TelaCadastroProprietario tela = new TelaCadastroProprietario(null, true);
+        new ControllerCadastroProprietario(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroFornecedor() {
+        TelaCadastroFornecedor tela = new TelaCadastroFornecedor(null, true);
+        new ControllerCadastroFornecedor(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroSindicoProfissional() {
+        TelaCadastroSindicoProfissional tela = new TelaCadastroSindicoProfissional(null, true);
+        new ControllerCadastroSindicoProfissional(tela);
+        tela.setVisible(true);
+    }
+
+    private void abrirCadastroCustoNivel1() {
+        TelaCadastroCustoNivel1 tela = new TelaCadastroCustoNivel1(null, true);
+        new ControllerCadastroCustoNivel1(tela);
+        tela.setVisible(true);
     }
 
     /**
@@ -34,11 +103,17 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -61,21 +136,56 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setText("Unidade Hab./Com.");
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Home.png"))); // NOI18N
+        jMenuItem3.setText("Unidade ");
         jMenu2.add(jMenuItem3);
+
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Black bookmark.png"))); // NOI18N
+        jMenuItem12.setText("Unidade Condomínio");
+        jMenu2.add(jMenuItem12);
+
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Flag.png"))); // NOI18N
+        jMenuItem8.setText("Área Compartilhada");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Blue pin.png"))); // NOI18N
+        jMenuItem9.setText("Área Compartilhada Edifício");
+        jMenu2.add(jMenuItem9);
         jMenu2.add(jSeparator1);
 
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Boss.png"))); // NOI18N
         jMenuItem4.setText("Proprietário");
         jMenu2.add(jMenuItem4);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Buy.png"))); // NOI18N
         jMenuItem5.setText("Fornecedor");
         jMenu2.add(jMenuItem5);
 
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Briefcase.png"))); // NOI18N
         jMenuItem6.setText("Síndico Profissional");
         jMenu2.add(jMenuItem6);
         jMenu2.add(jSeparator2);
 
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dollar.png"))); // NOI18N
+        jMenuItem10.setText("Custo Nível 1");
+        jMenu2.add(jMenuItem10);
+
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dollar.png"))); // NOI18N
+        jMenuItem11.setText("Custo Nível 2");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem11);
+        jMenu2.add(jSeparator3);
+
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cancel.png"))); // NOI18N
         jMenuItem7.setText("Sair");
         jMenu2.add(jMenuItem7);
 
@@ -85,6 +195,7 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Relatórios");
+        jMenu4.setActionCommand("Relatórios cagada");
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Ajuda");
@@ -118,6 +229,18 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
         telaCadastroEdificio.setVisible(true);
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        TelaCadastroAreaCompartilhada tela = new TelaCadastroAreaCompartilhada(null, true);
+        new ControllerCadastroAreaCompartilhada(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        TelaCadastroCustoNivel2 tela = new TelaCadastroCustoNivel2(null, true);
+        new ControllerCadastroCustoNivel2(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,13 +285,19 @@ public class TelaMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }
