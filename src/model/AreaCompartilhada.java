@@ -6,6 +6,11 @@ public class AreaCompartilhada {
     private String observacao;
     private String status;
 
+    @Override
+    public String toString() {
+        return "AreaCompartilhada{" + "id=" + id + ", descricao=" + descricao + ", observacao=" + observacao + ", status=" + status + '}';
+    }
+
     public AreaCompartilhada() {
     }
 

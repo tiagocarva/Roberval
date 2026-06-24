@@ -9,6 +9,11 @@ public class AreaCompartilhadaEdificio {
     
     AreaCompartilhada areaCompartilhada;
     Edificio edificio;
+
+    @Override
+    public String toString() {
+        return "AreaCompartilhadaEdificio{" + "id=" + id + ", observacao=" + observacao + ", status=" + status + ", areaCompartilhada=" + areaCompartilhada + ", edificio=" + edificio + '}';
+    }
     
     
 

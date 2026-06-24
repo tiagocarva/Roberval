@@ -1,11 +1,11 @@
 package model;
 
-public class Proprietario extends Pessoa {
+public class Fornecedor extends Pessoa {
 
-    public Proprietario() {
+    public Fornecedor() {
     }
 
-    public Proprietario(int id, String nomeFantasia, String razaoSocial, String cpf, String rg, String cnpj,
+    public Fornecedor(int id, String nomeFantasia, String razaoSocial, String cpf, String rg, String cnpj,
             String inscricaoFederal, String inscricaoEstadual, String fone1, String fone2, String email,
             String dataNascimento, String dataCadastro, String estadoCivil, String cep, String logradouro,
             String cidade, String bairro, String complemento, String observacao, String tipoPessoa, String status) {

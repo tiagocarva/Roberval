@@ -11,6 +11,11 @@ public class Reserva {
     AreaCompartilhadaEdificio areaCompartilhadaEdificio;
     
     //Ainda temos atributos/objetos para serem inseridos aqui
+
+    @Override
+    public String toString() {
+        return "Reserva{" + "id=" + id + ", dataHoraInicio=" + dataHoraInicio + ", dataHoraFim=" + dataHoraFim + ", observacao=" + observacao + ", status=" + status + ", areaCompartilhadaEdificio=" + areaCompartilhadaEdificio + '}';
+    }
     
     
 
